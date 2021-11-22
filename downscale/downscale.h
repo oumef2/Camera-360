@@ -1,6 +1,6 @@
 #ifndef DOWNSCALE_INCLUDE
 #define DOWNSCALE_INCLUDE
-
+#include"ac_fixed.h"
 
 const int osize = 256; // 256 ipower 8 of 2 to make division easier 
 const int isize = 1024; // 1024 devided by osize else the image might be croped 
