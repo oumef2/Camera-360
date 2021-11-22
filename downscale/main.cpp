@@ -17,13 +17,14 @@ int main()
 	int tx,ty;
 	f >> tx;
 	f >> ty;
-	cout << tx << "\n";
+	cout << "size of init image is: "<< tx << "\n";
 	f >> temp;
-	
+	int a; 
 	for(int i = 0; i < tx*ty; i++){
-		f >> image[i];
+		f >> a;
+		image[i] = a;
 	}
-	cout << image[0]<<"\n";
+	cout <<"first pixel of image is: "<< image[0]<<"\n";
 	f.close();
 
 	int_fixed downscale_image[osize*osize];
@@ -31,11 +32,11 @@ int main()
 	cout << "end downscaled \n";
 
 	//save results in pgm file
-	ofstream of("1_downscaled_order.pgm",ios::out);
-	of << format <<"\n";
+	ofstream of("1_downscaled_o.pgm",ios::out);
+	of << "P2" <<endl;
 	
-	of << osize <<" "<< osize <<"\n";
-	of << temp<<"\n";
+	of << osize <<" "<< osize <<endl;
+	of << temp<<endl;
 
 	for(int i = 0; i < osize*osize; i++){
 		of << downscale_image[i]<<"\n";
