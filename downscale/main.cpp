@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int image[1074*1074];
+int_fixed image[1074*1074];
 
 int main()
 {
@@ -26,7 +26,7 @@ int main()
 	cout << image[0]<<"\n";
 	f.close();
 
-	int downscale_image[osize*osize];
+	int_fixed downscale_image[osize*osize];
 	downscale(image, downscale_image);
 	cout << "end downscaled \n";
 
