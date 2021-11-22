@@ -2,7 +2,7 @@
 using namespace std;
 
 
-void downscale(int src[],int dst[])
+void downscale(int_fixed src[],int_fixed dst[])
 {
 	//division de isize by 256 (2^8)
 	int scale = (isize >>8);
