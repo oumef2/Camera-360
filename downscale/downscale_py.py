@@ -8,19 +8,21 @@ def downscale(img, optimal_size):
 
 if __name__ == "__main__":
 	#read image 
-	image = cv2.imread("1.jpg",0)
+	image = cv2.imread("data/2.jpg",0)
+	#image = downscale(image,1024)
+
 	print(image.shape)
 
 	#creat ppm image 
-	width = image.shape[0]
-	height = image.shape[1]
+	width = image.shape[1]
+	height = image.shape[0]
 	maxval = 255
 
 	# PPM header
 	ppm_header = f'P2 {width} {height} {maxval}\n'
 
     # Save the PPM image as a binary file
-	f= open('1.pgm','wb')
+	f= open('data/2_.pgm','wb')
 	f.write(bytearray(ppm_header, 'ascii'))
 	for i in range(image.shape[0]):
 		for j in range(image.shape[1]):
@@ -28,6 +30,6 @@ if __name__ == "__main__":
 	f.close()
 
 	#downscaled image with openCV
-	cv2.imshow('downscaled',downscale(image, 256))
+	cv2.imshow('downscaled',downscale(image, 80))
 	cv2.imshow('original',image)
 	cv2.waitKey(0) 
